@@ -15,7 +15,7 @@ set -xe
 
 
 export BOOTSTRAP_SCRIPT_URL=$bootstrap_script_url
-export BOOTSTRAP_SCRIPT_URL=${BOOTSTRAP_SCRIPT_URL:-https://raw.githubusercontent.com/salt-formulas/salt-formulas-scripts/master/bootstrap.sh}
+export BOOTSTRAP_SCRIPT_URL=${BOOTSTRAP_SCRIPT_URL:-https://raw.githubusercontent.com/alexgrud/github_heat_templates/master/script/bootstrap.sh}
 export DISTRIB_REVISION=$formula_pkg_revision
 export DISTRIB_REVISION=${DISTRIB_REVISION:-nightly}
 # BOOTSTRAP_EXTRA_REPO_PARAMS variable - list of exatra repos with parameters which have to be added.
