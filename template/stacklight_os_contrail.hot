@@ -67,10 +67,6 @@ parameters:
     type: string
     default: nightly
 
-  cfg_extra_formulas:
-    type: string
-    default: ""
-
 resources:
   mcp_network:
     type: MCP::Network
@@ -115,7 +111,6 @@ resources:
             $reclass_address: { get_param: cfg_reclass_address }
             $reclass_branch: { get_param: cfg_reclass_branch }
             $formula_pkg_revision: { get_param: cfg_formula_pkg_revision }
-            $extra_formulas: { get_param: cfg_extra_formulas }
   mcp_os_control:
     type: MCP::MultipleInstances
     depends_on: mcp_salt_master
@@ -174,30 +169,7 @@ resources:
       instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
       instance_cloud_init: |
         # todo
-  mcp_os_compute:
-    type: MCP::StaticCluster
-    depends_on: mcp_oc_control
-    properties:
-      key_pair: { get_param: "OS::stack_name" }
-      network: { get_attr: [mcp_network, network] }
-      security_group: { get_attr: [mcp_network, security_group] }
-      network01_prefix: { get_attr: [mcp_network, network01_prefix] }
-      network02_prefix: { get_attr: [mcp_network, network02_prefix] }
-      instance_name: cmp
-      instance_count: { get_param: cluster_node_count }
-      instance_domain:
-        list_join:
-        - '.'
-        - [ { get_param: "OS::stack_name" }, { get_param: cluster_domain } ]
-      instance_cluster: { get_param: cluster_name }
-      instance_zone: { get_param: cluster_zone }
-      instance_os: xenial
-      instance_image: ubuntu-16-04-amd64-cloudimg
-      instance_flavor: os_cmp_small
-      instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
-      instance_cloud_init: |
-        # todo
-  mcp_sl_proxy_single:
+  mcp_os_dashboard:
     type: MCP::SingleInstance
     depends_on: mcp_salt_master
     properties:
@@ -215,7 +187,30 @@ resources:
       instance_zone: { get_param: cluster_zone }
       instance_os: xenial
       instance_image: ubuntu-16-04-amd64-cloudimg
-      instance_flavor: m1.large20
+      instance_flavor: m1.medium20
+      instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
+      instance_cloud_init: |
+        # todo
+  mcp_os_compute:
+    type: MCP::StaticCluster
+    depends_on: mcp_os_control
+    properties:
+      key_pair: { get_param: "OS::stack_name" }
+      network: { get_attr: [mcp_network, network] }
+      security_group: { get_attr: [mcp_network, security_group] }
+      network01_prefix: { get_attr: [mcp_network, network01_prefix] }
+      network02_prefix: { get_attr: [mcp_network, network02_prefix] }
+      instance_name: cmp
+      instance_count: { get_param: cluster_node_count }
+      instance_domain:
+        list_join:
+        - '.'
+        - [ { get_param: "OS::stack_name" }, { get_param: cluster_domain } ]
+      instance_cluster: { get_param: cluster_name }
+      instance_zone: { get_param: cluster_zone }
+      instance_os: xenial
+      instance_image: ubuntu-16-04-amd64-cloudimg
+      instance_flavor: os_cmp_small
       instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
       instance_cloud_init: |
         # todo
@@ -268,7 +263,6 @@ resources:
       instance_flavor: oc_vsrx
       instance_cloud_init: |
         # todo
-
 outputs:
   salt_master_ip:
     value: { get_attr: [mcp_salt_master, instance_public_address] }

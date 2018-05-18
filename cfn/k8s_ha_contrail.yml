@@ -11,7 +11,7 @@ Parameters:
   ReclassAddress:
     Description: Git repository with reclass
     Type: String
-    Default: https://github.com/tomkukral/kubernetes-aws-model.git
+    Default: https://github.com/Mirantis/kubernetes-aws-model.git
   ReclassBranch:
     Description: Branch or reclass model
     Type: String
@@ -271,8 +271,8 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
-              - "wget -O /tmp/saltmaster_install.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/saltmaster_install.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
+              - "wget -O /tmp/saltmaster_install.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/saltmaster_install.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "chmod +x /tmp/saltmaster_install.sh"
               - "# Set AWS variables"
@@ -361,7 +361,7 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "# Set AWS variables"
               - "export aws_instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | sed 's/i-//g' | cut -c 1-8)"
@@ -448,7 +448,7 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "# Set AWS variables"
               - "export aws_instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | sed 's/i-//g' | cut -c 1-8)"
@@ -535,7 +535,7 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "# Set AWS variables"
               - "export aws_instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | sed 's/i-//g' | cut -c 1-8)"
@@ -605,7 +605,7 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "# Set AWS variables"
               - "export aws_instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | sed 's/i-//g' | cut -c 1-8)"
@@ -717,7 +717,7 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "# Set AWS variables"
               - "export aws_instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | sed 's/i-//g' | cut -c 1-8)"
@@ -804,7 +804,7 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "# Set AWS variables"
               - "export aws_instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | sed 's/i-//g' | cut -c 1-8)"
@@ -891,7 +891,7 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "# Set AWS variables"
               - "export aws_instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | sed 's/i-//g' | cut -c 1-8)"
@@ -979,7 +979,7 @@ Resources:
               - "apt-get install -y python-pip"
               - "pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz"
               - "# Download Heat templates"
-              - "wget -O /tmp/instance_boot.sh https://github.com/tomkukral/heat-fragments/raw/aws/script/instance_boot.sh"
+              - "wget -O /tmp/instance_boot.sh https://raw.githubusercontent.com/Mirantis/heat-fragments/master/script/instance_boot.sh"
               - "chmod +x /tmp/instance_boot.sh"
               - "# Set AWS variables"
               - "export aws_instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | sed 's/i-//g' | cut -c 1-8)"
