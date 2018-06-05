@@ -95,7 +95,7 @@ resources:
       instance_cluster: { get_param: cluster_name }
       instance_zone: { get_param: cluster_zone }
       instance_os: xenial
-      instance_image: ubuntu-16-04-amd64-cloudimg
+      instance_image: ubuntu-16-04-x64-201803191349
       instance_flavor: cfg_salt_small-1
       instance_config_host: 127.0.0.1
       instance_cloud_init:
@@ -139,7 +139,7 @@ resources:
       instance_cluster: { get_param: cluster_name }
       instance_zone: { get_param: cluster_zone }
       instance_os: xenial
-      instance_image: ubuntu-16-04-amd64-cloudimg
+      instance_image: ubuntu-16-04-x64-201803191349
       instance_flavor: k8s_ctl_small
       instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
       instance_cloud_init: |
@@ -168,7 +168,7 @@ resources:
       instance_cluster: { get_param: cluster_name }
       instance_zone: { get_param: cluster_zone }
       instance_os: trusty
-      instance_image: ubuntu-14-04-x64-mcp1.1
+      instance_image: ubuntu-16-04-x64-201803191349
       instance_flavor: oc_aio_medium
       instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
       instance_cloud_init: |
@@ -191,7 +191,7 @@ resources:
       instance_cluster: { get_param: cluster_name }
       instance_zone: { get_param: cluster_zone }
       instance_os: xenial
-      instance_image: ubuntu-16-04-amd64-cloudimg
+      instance_image: ubuntu-16-04-x64-latest
       instance_flavor: k8_cmp_small
       instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
       instance_cloud_init: |

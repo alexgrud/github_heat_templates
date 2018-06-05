@@ -95,7 +95,7 @@ resources:
       instance_cluster: { get_param: cluster_name }
       instance_zone: { get_param: cluster_zone }
       instance_os: xenial
-      instance_image: ubuntu-16-04-amd64-cloudimg
+      instance_image: ubuntu-16-04-x64-201803191349
       instance_flavor: cfg_salt_small-1
       instance_config_host: 127.0.0.1
       instance_cloud_init:
@@ -129,9 +129,9 @@ resources:
             list_join:
             - '.'
             - [ { get_attr: [mcp_network, network02_prefix] }, '253' ]
-      instance01_name: kct01
-      instance02_name: kct02
-      instance03_name: kct03
+      instance01_name: ctl01
+      instance02_name: ctl02
+      instance03_name: ctl03
       instance_domain:
         list_join:
         - '.'
@@ -139,7 +139,7 @@ resources:
       instance_cluster: { get_param: cluster_name }
       instance_zone: { get_param: cluster_zone }
       instance_os: xenial
-      instance_image: ubuntu-16-04-amd64-cloudimg
+      instance_image: ubuntu-16-04-x64-201803191349
       instance_flavor: m1.large40
       instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
       instance_cloud_init: |
@@ -153,7 +153,7 @@ resources:
       security_group: { get_attr: [mcp_network, security_group] }
       network01_prefix: { get_attr: [mcp_network, network01_prefix] }
       network02_prefix: { get_attr: [mcp_network, network02_prefix] }
-      instance_name: kcm
+      instance_name: cmp
       instance_count: { get_param: cluster_node_count }
       instance_domain:
         list_join:
@@ -162,7 +162,7 @@ resources:
       instance_cluster: { get_param: cluster_name }
       instance_zone: { get_param: cluster_zone }
       instance_os: xenial
-      instance_image: ubuntu-16-04-amd64-cloudimg
+      instance_image: ubuntu-16-04-x64-201803191349
       instance_flavor: k8_cmp_small
       instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
       instance_cloud_init: |
