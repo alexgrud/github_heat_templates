@@ -27,6 +27,7 @@ export RECLASS_BRANCH=${RECLASS_BRANCH:-master}
 export RECLASS_ROOT=${RECLASS_ROOT:-/srv/salt/reclass}
 export DISTRIB_REVISION=${DISTRIB_REVISION:-nightly}
 #export DEBUG=${DEBUG:-1}
+export BOOTSTRAP_SALTSTACK_VERSION="$saltversion"
 
 # get Master IP addresses
 node_ip="$(ip a | awk -v prefix="^    inet $network01_prefix[.]" '$0 ~ prefix {split($2, a, "/"); print a[1]}'| head -1)"

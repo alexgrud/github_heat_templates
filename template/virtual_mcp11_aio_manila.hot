@@ -72,6 +72,9 @@ parameters:
   cfg_extra_formulas:
     type: string
     default: ""
+  cfg_saltversion:
+    type: string
+    default: 'stable 2016.3'
 
 resources:
   mcp_network:
@@ -126,6 +129,7 @@ resources:
             $reclass_branch: { get_param: cfg_reclass_branch }
             $formula_pkg_revision: { get_param: cfg_formula_pkg_revision }
             $extra_formulas: { get_param: cfg_extra_formulas }
+            $saltversion: { get_param: cfg_saltversion }
 
 outputs:
   salt_master_ip:

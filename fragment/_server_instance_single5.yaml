@@ -65,6 +65,9 @@ parameters:
   cfg_formula_pkg_revision:
     type: string
     default: 'nightly'
+  cfg_saltversion:
+    type: string
+    default: 'stable 2016.3'
 
 resources:
   instance_port01:
@@ -151,6 +154,7 @@ resources:
             $wait_condition_notify: { get_attr: [ instance_wait_handle, curl_cli ] }
             $bootstrap_extra_repo_params: { get_param: cfg_bootstrap_extra_repo_params }
             $formula_pkg_revision: { get_param: cfg_formula_pkg_revision }
+            $saltversion: { get_param: cfg_saltversion }
   floating_ip:
     type: OS::Nova::FloatingIP
     properties:

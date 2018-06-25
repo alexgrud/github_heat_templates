@@ -70,6 +70,9 @@ parameters:
   public_vip_prefix:
     type: string
     default: vip-kubernetes
+  cfg_saltversion:
+    type: string
+    default: 'stable 2016.3'
 
 resources:
   mcp_network:
@@ -116,6 +119,7 @@ resources:
             $reclass_branch: { get_param: cfg_reclass_branch }
             $formula_pkg_revision: { get_param: cfg_formula_pkg_revision }
             $extra_formulas: { get_param: cfg_extra_formulas }
+            $saltversion: { get_param: cfg_saltversion }
   mcp_k8s_control:
     type: MCP::BalancerCluster
     depends_on: mcp_salt_master

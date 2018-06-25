@@ -162,7 +162,7 @@ resources:
       instance_cluster: { get_param: cluster_name }
       instance_zone: { get_param: cluster_zone }
       instance_os: xenial
-      instance_image: ubuntu-16-04-x64-201803191349
+      instance_image: ubuntu-16-04-amd64-cloudimg
       instance_flavor: k8_cmp_small
       instance_config_host: { get_attr: [mcp_salt_master, instance_address] }
       instance_cloud_init: |
